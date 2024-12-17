@@ -10,13 +10,11 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
-      <Nav />
       <Banner />
       <Display />
       <Products />
       <Swiper />
       <GalleryComponent />
-      <Footer />
     </div>
   );
 }

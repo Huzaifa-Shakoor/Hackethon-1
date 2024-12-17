@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { FaShareAlt, FaHeart, FaBalanceScale, FaShare } from "react-icons/fa";
 
-const Products = () => {
+const Productour = () => {
   // State for the cart sidebar visibility
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,6 +21,14 @@ const Products = () => {
     { id: 6, image: "chair.jpg", name: "Product 6", price: "$600", cutPrice: "$650" },
     { id: 7, image: "chair.jpg", name: "Product 7", price: "$700", cutPrice: "$750" },
     { id: 8, image: "chair.jpg", name: "Product 8", price: "$800", cutPrice: "$850" },
+    { id: 9, image: "chair.jpg", name: "Product 1", price: "$100", cutPrice: "$150" },
+    { id: 10, image: "chair.jpg", name: "Product 2", price: "$200", cutPrice: "$250" },
+    { id: 11, image: "chair.jpg", name: "Product 3", price: "$300", cutPrice: "$350" },
+    { id: 12, image: "chair.jpg", name: "Product 4", price: "$400", cutPrice: "$450" },
+    { id: 13, image: "chair.jpg", name: "Product 5", price: "$500", cutPrice: "$550" },
+    { id: 14, image: "chair.jpg", name: "Product 6", price: "$600", cutPrice: "$650" },
+    { id: 15, image: "chair.jpg", name: "Product 7", price: "$700", cutPrice: "$750" },
+    { id: 16, image: "chair.jpg", name: "Product 8", price: "$800", cutPrice: "$850" },
   ];
 
   return (
@@ -87,67 +95,76 @@ const Products = () => {
         ))}
       </div>
 
-      {/* Show More Button */}
-      <div className="text-center mt-6">
-        <button className="bg-transparent border-2 border-[#faa83e] text-[#faa83e] px-6 py-2 rounded-md hover:bg-[#faa83e] hover:text-white transition duration-300">
-          Show More
+      {/* Pagination Buttons */}
+      <div className="flex justify-center space-x-2 mt-6">
+        {/* Pagination Button */}
+        {[1, 2, 3].map((page) => (
+          <button
+            key={page}
+            className="bg-transparent border-2 border-[#faa83e] text-[#faa83e] px-4 py-2 rounded-md hover:bg-[#faa83e] hover:text-white transition duration-300"
+          >
+            {page}
+          </button>
+        ))}
+
+        {/* Next Button */}
+        <button className="bg-transparent border-2 border-[#faa83e] text-[#faa83e] px-4 py-2 rounded-md hover:bg-[#faa83e] hover:text-white transition duration-300">
+          Next
         </button>
       </div>
 
-     {/* Cart Sidebar */}
-<div
-  className={`fixed top-0 right-0  h-full bg-white text-gray-900 shadow-xl w-80 transform ${
-    isOpen ? "translate-x-0" : "translate-x-full"
-  } transition-transform duration-300 ease-in-out`}
->
-  {/* Close Button */}
-  <button
-    onClick={toggleSidebar}
-    className="absolute top-4 right-4 text-gray-400 hover:text-gray-800"
-  >
-    ✕
-  </button>
+      {/* Cart Sidebar */}
+      <div
+        className={`fixed top-0 right-0 h-full bg-white text-gray-900 shadow-xl w-80 transform ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out`}
+      >
+        {/* Close Button */}
+        <button
+          onClick={toggleSidebar}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-800"
+        >
+          ✕
+        </button>
 
-  {/* Cart Content */}
-  <div className="p-6">
-    <h2 className="text-2xl font-bold mb-6">Your Cart</h2>
-    <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <img src="chair.jpg" alt="Product" className="w-12 h-12 rounded-md" />
-        <div>
-          <p className="font-bold">Product 1</p>
-          <p className="text-gray-500">Quantity: 1</p>
+        {/* Cart Content */}
+        <div className="p-6">
+          <h2 className="text-2xl font-bold mb-6">Your Cart</h2>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <img src="chair.jpg" alt="Product" className="w-12 h-12 rounded-md" />
+              <div>
+                <p className="font-bold">Product 1</p>
+                <p className="text-gray-500">Quantity: 1</p>
+              </div>
+              <p>$100.00</p>
+            </div>
+            <div className="flex items-center justify-between">
+              <img src="chair.jpg" alt="Product" className="w-12 h-12 rounded-md" />
+              <div>
+                <p className="font-bold">Product 2</p>
+                <p className="text-gray-500">Quantity: 2</p>
+              </div>
+              <p>$200.00</p>
+            </div>
+          </div>
+
+          {/* Checkout Button */}
+          <button className="bg-[#faa83e] w-full py-3 mt-6 rounded-md font-bold hover:bg-[#f7922e]">
+            Checkout
+          </button>
         </div>
-        <p>$100.00</p>
       </div>
-      
-      <div className="flex items-center justify-between">
-        <img src="chair.jpg" alt="Product" className="w-12 h-12 rounded-md" />
-        <div>
-          <p className="font-bold">Product 2</p>
-          <p className="text-gray-500">Quantity: 2</p>
-        </div>
-        <p>$200.00</p>
-      </div>
-    </div>
 
-    {/* Checkout Button */}
-    <button className="bg-[#faa83e] w-full py-3 mt-6 rounded-md font-bold hover:bg-[#f7922e]">
-      Checkout
-    </button>
-  </div>
-</div>
-
-{/* Full-page Overlay */}
-{isOpen && (
-  <div
-    onClick={toggleSidebar}
-    className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40"
-  ></div>
-)}
-
+      {/* Full-page Overlay */}
+      {isOpen && (
+        <div
+          onClick={toggleSidebar}
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40"
+        ></div>
+      )}
     </section>
   );
 };
 
-export default Products;
+export default Productour;

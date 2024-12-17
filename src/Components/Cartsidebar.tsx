@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 
 const CartSidebar = () => {
@@ -24,7 +24,7 @@ const CartSidebar = () => {
       <div
         className={`fixed top-0 right-0 h-full bg-gray-800 text-white shadow-xl w-80 transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out`}
+        } transition-transform duration-300 ease-in-out z-50`}
       >
         {/* Close Button */}
         <button
@@ -63,11 +63,11 @@ const CartSidebar = () => {
         </div>
       </div>
 
-      {/* Overlay (optional for better UX) */}
+      {/* Overlay */}
       {isOpen && (
         <div
           onClick={toggleSidebar}
-          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50"
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-40"
         ></div>
       )}
     </div>

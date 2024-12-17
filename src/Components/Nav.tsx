@@ -15,7 +15,7 @@ const Nav = () => {
   return (
     <nav className="relative px-4 py-4 flex justify-between items-center bg-white">
      <a className="flex items-center text-3xl font-bold leading-none" href="#">
-        <img src="logo.png" alt="Furniro Logo" className="h-10 w-auto mr-2" />
+        <img src="logo.png" alt="" className="h-10 w-auto mr-2" />
         Furniro
       </a>
 
@@ -39,27 +39,32 @@ const Nav = () => {
       {/* Desktop Menu */}
       <ul className="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
         <li>
-          <Link className="text-sm text-black hover:text-gray-500" href="#">
+          <Link className="text-sm text-black hover:text-gray-500" href="/">
             Home
           </Link>
         </li>
         <li>
-          <Link className="text-sm text-black hover:text-gray-500" href="#">
+          <Link className="text-sm text-black hover:text-gray-500" href="blog">
             About Us
           </Link>
         </li>
         <li>
-          <Link className="text-sm text-black hover:text-gray-500" href="#">
+          <Link className="text-sm text-black hover:text-gray-500" href="checkout">
             Services
           </Link>
         </li>
         <li>
-          <Link className="text-sm text-black hover:text-gray-500" href="#">
+          <Link className="text-sm text-black hover:text-gray-500" href="shop">
             Pricing
           </Link>
         </li>
         <li>
-          <Link className="text-sm text-black hover:text-gray-500" href="#">
+          <Link className="text-sm text-black hover:text-gray-500" href="shop">
+            Shop
+          </Link>
+        </li>
+        <li>
+          <Link className="text-sm text-black hover:text-gray-500" href="Contact">
             Contact
           </Link>
         </li>
@@ -83,27 +88,27 @@ const Nav = () => {
 
         <ul className="py-4 space-y-4 px-6">
           <li>
-            <Link className="text-sm text-black hover:text-gray-500" href="#">
+            <Link className="text-sm text-black hover:text-gray-500" href="/">
               Home
             </Link>
           </li>
           <li>
-            <Link className="text-sm text-black hover:text-gray-500" href="#">
+            <Link className="text-sm text-black hover:text-gray-500" href="blog">
               About Us
             </Link>
           </li>
           <li>
-            <Link className="text-sm text-black hover:text-gray-500" href="#">
+            <Link className="text-sm text-black hover:text-gray-500" href="shop">
               Services
             </Link>
           </li>
           <li>
-            <Link className="text-sm text-black hover:text-gray-500" href="#">
+            <Link className="text-sm text-black hover:text-gray-500" href="shop/pdetails">
               Pricing
             </Link>
           </li>
           <li>
-            <Link className="text-sm text-black hover:text-gray-500" href="#">
+            <Link className="text-sm text-black hover:text-gray-500" href="Contact">
               Contact
             </Link>
           </li>
@@ -120,7 +125,7 @@ const Nav = () => {
           <Link href="/wishlist" className="text-black hover:text-gray-500">
             <FaHeart className="h-6 w-6" />
           </Link>
-          <Link href="/cart" className="text-black hover:text-gray-500">
+          <Link href="cart" className="text-black hover:text-gray-500">
             <FaShoppingCart className="h-6 w-6" />
           </Link>
         </div>

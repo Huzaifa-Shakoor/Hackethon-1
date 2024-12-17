@@ -38,15 +38,16 @@ const GalleryWithContent = () => {
   return (
     <div className="flex p-8 space-x-8 bg-gray-100">
       {/* Left Side - Heading, Content, and Button */}
-      <div className="w-1/3 p-7 py-auto my-auto">
-        <h2 className="text-2xl font-bold mb-4">Heading for Left Section</h2>
-        <p className="mb-4">
-          This is some content describing the image gallery on the right side.
-        </p>
-        <button className="bg-[#faa83e] text-white py-2 px-4 rounded hover:bg-[#ff9000] transition duration-300">
-          Explore More
-        </button>
-      </div>
+      <div className="w-full md:w-1/3 p-7 py-auto my-auto">
+  <h2 className="text-2xl font-bold mb-4 text-center md:text-left">Heading for Left Section</h2>
+  <p className="mb-4 text-center md:text-left">
+    This is some content describing the image gallery on the right side.
+  </p>
+  <button className="bg-[#faa83e] text-white py-2 px-4 rounded hover:bg-[#ff9000] transition duration-300 mx-auto md:mx-0 block">
+    Explore More
+  </button>
+</div>
+
 
       {/* Right Side - Image Gallery */}
       <div className="w-2/3 flex flex-col items-center justify-center space-y-4 relative">
